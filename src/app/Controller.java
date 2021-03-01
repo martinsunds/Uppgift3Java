@@ -39,7 +39,6 @@ public class Controller {
 			} catch (Exception e1) {
 				
 				view.getLblErrorMessage().setText(error.handleException(e1));
-				//e1.printStackTrace();
 			}
 		}
 	});

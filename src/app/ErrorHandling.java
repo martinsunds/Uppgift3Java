@@ -11,7 +11,6 @@ import java.lang.IndexOutOfBoundsException;
 
 public class ErrorHandling {
 	
-	//Tagit hjälp av labbledare
 	
 	public String handleException(Exception ex) {
 		String errorMessage;
