@@ -44,16 +44,10 @@ public class WebServiceAssignment3SoapProxy implements org.tempuri.WebServiceAss
     return webServiceAssignment3Soap;
   }
   
-  public java.lang.String helloWorld() throws java.rmi.RemoteException{
+  public java.lang.String fileReader(java.lang.String file) throws java.rmi.RemoteException{
     if (webServiceAssignment3Soap == null)
       _initWebServiceAssignment3SoapProxy();
-    return webServiceAssignment3Soap.helloWorld();
-  }
-  
-  public int addNumbers(int a, int b) throws java.rmi.RemoteException{
-    if (webServiceAssignment3Soap == null)
-      _initWebServiceAssignment3SoapProxy();
-    return webServiceAssignment3Soap.addNumbers(a, b);
+    return webServiceAssignment3Soap.fileReader(file);
   }
   
   

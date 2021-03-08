@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class View {
 
@@ -17,58 +18,26 @@ public class View {
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
+	private JTextField textFieldEnterFilePath;
+	public JTextField getTextFieldEnterFilePath() {
+		return textFieldEnterFilePath;
+	}
 
-	
+	public void setTextFieldEnterFilePath(JTextField textFieldEnterFilePath) {
+		this.textFieldEnterFilePath = textFieldEnterFilePath;
+	}
 
-	private JTextField textFieldFirstNbr;
+	public JButton getBtnReadFile() {
+		return btnReadFile;
+	}
+
+	public void setBtnReadFile(JButton btnReadFile) {
+		this.btnReadFile = btnReadFile;
+	}
+
 	public JTextField getTextFieldFirstNbr() {
-		return textFieldFirstNbr;
+		return textFieldEnterFilePath;
 	}
-
-	public void setTextFieldFirstNbr(JTextField textFieldFirstNbr) {
-		this.textFieldFirstNbr = textFieldFirstNbr;
-	}
-
-	public JTextField getTextFieldSecondNbr() {
-		return textFieldSecondNbr;
-	}
-
-	public void setTextFieldSecondNbr(JTextField textFieldSecondNbr) {
-		this.textFieldSecondNbr = textFieldSecondNbr;
-	}
-
-	public JTextField getTextFieldSum() {
-		return textFieldSum;
-	}
-
-	public void setTextFieldSum(JTextField textFieldSum) {
-		this.textFieldSum = textFieldSum;
-	}
-
-	public JLabel getLblPlus() {
-		return lblPlus;
-	}
-
-	public void setLblPlus(JLabel lblPlus) {
-		this.lblPlus = lblPlus;
-	}
-
-	public JLabel getLblEquals() {
-		return lblEquals;
-	}
-
-	public void setLblEquals(JLabel lblEquals) {
-		this.lblEquals = lblEquals;
-	}
-
-	public JLabel getLblMathText() {
-		return lblMathText;
-	}
-
-	public void setLblMathText(JLabel lblMathText) {
-		this.lblMathText = lblMathText;
-	}
-
 	public JLabel getLblErrorMessage() {
 		return lblErrorMessage;
 	}
@@ -76,23 +45,15 @@ public class View {
 	public void setLblErrorMessage(JLabel lblErrorMessage) {
 		this.lblErrorMessage = lblErrorMessage;
 	}
-
-
-
-	private JTextField textFieldSecondNbr;
-	private JTextField textFieldSum;
-	private JButton addButton;
-	private JLabel lblPlus;
-	private JLabel lblEquals;
-	private JLabel lblMathText;
+	private JButton btnReadFile;
 	private JLabel lblErrorMessage;
 
 	public JButton getAddButton() {
-		return addButton;
+		return btnReadFile;
 	}
 
 	public void setAddButton(JButton addButton) {
-		this.addButton = addButton;
+		this.btnReadFile = addButton;
 	}
 
 
@@ -104,40 +65,26 @@ public class View {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		textFieldFirstNbr = new JTextField();
-		textFieldFirstNbr.setBounds(45, 83, 96, 19);
-		frame.getContentPane().add(textFieldFirstNbr);
-		textFieldFirstNbr.setColumns(10);
+		textFieldEnterFilePath = new JTextField();
+		textFieldEnterFilePath.setBounds(98, 25, 86, 19);
+		frame.getContentPane().add(textFieldEnterFilePath);
+		textFieldEnterFilePath.setColumns(10);
 		
-		textFieldSecondNbr = new JTextField();
-		textFieldSecondNbr.setBounds(172, 83, 96, 19);
-		frame.getContentPane().add(textFieldSecondNbr);
-		textFieldSecondNbr.setColumns(10);
-		
-		 addButton = new JButton("Add");
-		addButton.setBounds(115, 128, 85, 21);
-		frame.getContentPane().add(addButton);
-		
-		textFieldSum = new JTextField();
-		textFieldSum.setBounds(313, 83, 96, 19);
-		frame.getContentPane().add(textFieldSum);
-		textFieldSum.setColumns(10);
-		
-		lblPlus = new JLabel("+");
-		lblPlus.setBounds(151, 86, 45, 13);
-		frame.getContentPane().add(lblPlus);
-		
-		lblEquals = new JLabel("=");
-		lblEquals.setBounds(281, 86, 45, 13);
-		frame.getContentPane().add(lblEquals);
-		
-		lblMathText = new JLabel("Add two numbers and see what you get");
-		lblMathText.setBounds(115, 40, 266, 13);
-		frame.getContentPane().add(lblMathText);
+		btnReadFile = new JButton("Read file");
+		btnReadFile.setBounds(147, 222, 189, 21);
+		frame.getContentPane().add(btnReadFile);
 		
 		lblErrorMessage = new JLabel("");
-		lblErrorMessage.setBounds(45, 198, 291, 13);
+		lblErrorMessage.setBounds(29, 198, 291, 13);
 		frame.getContentPane().add(lblErrorMessage);
+		
+		JTextArea textAreaReadFile = new JTextArea();
+		textAreaReadFile.setEditable(false);
+		textAreaReadFile.setBounds(194, 11, 213, 177);
+		frame.getContentPane().add(textAreaReadFile);
+		
+		JLabel lblEnterFilePath = new JLabel("Enter file path:");
+		lblEnterFilePath.setBounds(10, 28, 86, 14);
+		frame.getContentPane().add(lblEnterFilePath);
 	}
-
 }

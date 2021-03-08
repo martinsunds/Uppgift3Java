@@ -8,6 +8,5 @@
 package org.tempuri;
 
 public interface WebServiceAssignment3Soap extends java.rmi.Remote {
-    public java.lang.String helloWorld() throws java.rmi.RemoteException;
-    public int addNumbers(int a, int b) throws java.rmi.RemoteException;
+    public java.lang.String fileReader(java.lang.String file) throws java.rmi.RemoteException;
 }
