@@ -25,19 +25,17 @@ public class Controller {
 	
 	public void initialize () {
 	
-	view.getAddButton().addActionListener(new ActionListener() {
+	view.getBtnReadFile().addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
 			view.getLblErrorMessage().setText("");
 			
 			try {
-				int firstNbr = Integer.parseInt(view.getTextFieldFirstNbr().getText());
-				int secondNbr = Integer.parseInt(view.getTextFieldSecondNbr().getText());
-				int sum = proxy.addNumbers(firstNbr, secondNbr);
-				view.getTextFieldSum().setText(Integer.toString(sum));
-				
+			String filePath = view.getTextFieldEnterFilePath().getText();
+			String str = proxy.fileReader(filePath);
+			view.getTextAreaReadFile().append(str);
+			
 			} catch (Exception e1) {
-				
 				view.getLblErrorMessage().setText(error.handleException(e1));
 			}
 		}
