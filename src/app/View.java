@@ -11,6 +11,15 @@ import javax.swing.JTextArea;
 public class View {
 
 	private JFrame frame;
+	private JTextArea textAreaReadFile;
+	public JTextArea getTextAreaReadFile() {
+		return textAreaReadFile;
+	}
+
+	public void setTextAreaReadFile(JTextArea textAreaReadFile) {
+		this.textAreaReadFile = textAreaReadFile;
+	}
+
 	public JFrame getFrame() {
 		return frame;
 	}
@@ -78,7 +87,7 @@ public class View {
 		lblErrorMessage.setBounds(29, 198, 291, 13);
 		frame.getContentPane().add(lblErrorMessage);
 		
-		JTextArea textAreaReadFile = new JTextArea();
+		textAreaReadFile = new JTextArea();
 		textAreaReadFile.setEditable(false);
 		textAreaReadFile.setBounds(194, 11, 213, 177);
 		frame.getContentPane().add(textAreaReadFile);
